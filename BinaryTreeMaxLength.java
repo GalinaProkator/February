@@ -27,7 +27,7 @@ public class BinaryTreeMaxLength {
 			return 0;
 		}
 		if (node.getLeft() == null && node.getRight() == null) {
-			return 0;
+			return 1;
 		}
 		return Math.max(1+binaryTreeMaxLength(node.getLeft()), 1 + binaryTreeMaxLength(node.getRight()));
 		
