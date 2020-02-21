@@ -24,7 +24,7 @@ public class PermutationABC {
 		printArray(newArray);
 	}
 
-	private static boolean isPresentInTheArray (char random, char [] newArray) {
+	public static boolean isPresentInTheArray (char random, char [] newArray) {
 		for (int i=0; i<newArray.length; i++) {
 			if (newArray[i] == random) {
 				return true;
@@ -33,13 +33,13 @@ public class PermutationABC {
 		return false;
 	}
 
-	private static int getRandom() {
+	public static int getRandom() {
 		Random rnd = new Random();
 		int random = rnd.nextInt(3);
 		return random;
 	}
 
-	private static void printArray (char [] newArray) {
+	public static void printArray (char [] newArray) {
 		for (int i=0; i<newArray.length; i++) {
 			System.out.print(newArray[i] + " ");
 		}
