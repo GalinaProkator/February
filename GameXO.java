@@ -29,9 +29,11 @@ public class GameXO {
 		while (amountOfFreeCells > 0 && !isWin(board)) {
 			if (currentPlayer == Player.PLAYER1) {
 				makeMovePlayer(player1, board, amountOfFreeCells, currentPlayer);
+				currentPlayer = Player.PLAYER2;
 			}
 			else {
 				makeMovePlayer(player2, board, amountOfFreeCells, currentPlayer);
+				currentPlayer = Player.PLAYER1;
 			}
 		}
 
@@ -49,8 +51,7 @@ public class GameXO {
 		showBoard(board);
 		if (isWin(board)) {
 			JOptionPane.showMessageDialog(null, "Gongratulations " + currentPlayer +"! YOU WON!");
-		}
-		currentPlayer = Player.PLAYER2;		
+		}		
 	}
 
 	//	check if the cell is already taken
@@ -72,7 +73,7 @@ public class GameXO {
 		String strUserNum = JOptionPane.showInputDialog("Please enter the row number of your next move");
 		int row = Integer.parseInt(strUserNum);
 
-		while (row >= 3 && row < 0) {
+		while (row >= 3 || row < 0) {
 			System.out.print("The row may not be more than 3");
 			strUserNum = JOptionPane.showInputDialog("Please‬‬ ‫‪re-enter‬‬ ‫‪the row");
 			row = Integer.parseInt(strUserNum);
@@ -84,7 +85,7 @@ public class GameXO {
 		String strUserNum = JOptionPane.showInputDialog("Please enter the column number of your next move");
 		int col = Integer.parseInt(strUserNum);
 
-		while (col >= 3 && col < 0) {
+		while (col >= 3 || col < 0) {
 			System.out.print("The column may not be more than 3");
 			strUserNum = JOptionPane.showInputDialog("Please‬‬ ‫‪re-enter‬‬ ‫‪the column");
 			col = Integer.parseInt(strUserNum);
