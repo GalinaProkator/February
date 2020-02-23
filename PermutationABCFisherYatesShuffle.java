@@ -10,7 +10,7 @@ public class PermutationABCFisherYatesShuffle {
 	}
 
 	public static char[] permutationFisherYates(char[] letters) {
-		for (int i=letters.length-1; i>0; i--) {
+		for (int i=letters.length-1; i>=0; i--) {
 			int random = getRandom(i);
 			char temp = letters[i];
 			letters[i] = letters[random];
